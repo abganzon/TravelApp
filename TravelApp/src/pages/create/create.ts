@@ -51,7 +51,7 @@ export class CreatePage {
         {
           text: 'Logout',
           handler: () => {
-            this.navCtrl.push(LoginPage);
+            this.appCtrl.getRootNav().push(LoginPage);
             console.log('Close clicked');
             
             let toast = this.toastCtrl.create({

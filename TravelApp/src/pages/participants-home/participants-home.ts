@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
 import { DetailsPage } from '../details/details';
 
@@ -17,11 +17,15 @@ import { DetailsPage } from '../details/details';
 })
 export class ParticipantsHomePage {
   rate: any =0 ;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  private viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ParticipantsHomePage');
+  }
+
+  ionViewWillEnter() {
+    this.viewCtrl.showBackButton(false);
   }
   onModelChange(event){
     this.rate = event;

@@ -6,8 +6,6 @@ import { App } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
-
 /**
  * Generated class for the PactivePage page.
  *
@@ -22,7 +20,7 @@ import { ParticipantsControlPanelPage } from '../participants-control-panel/part
 })
 export class PactivePage {
  rate: any = 0;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, private toastCtrl: ToastController, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, private toastCtrl: ToastController, private alertCtrl: AlertController,) {
   }
 
   ionViewDidLoad() {
@@ -57,7 +55,7 @@ export class PactivePage {
         {
           text: 'Logout',
           handler: () => {
-            this.navCtrl.push(LoginPage);
+            this.appCtrl.getRootNav().push(LoginPage);
             console.log('Close clicked');
             
             let toast = this.toastCtrl.create({
