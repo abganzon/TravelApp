@@ -15,6 +15,8 @@ import { File } from '@ionic-native/file';
 import { Camera } from '@ionic-native/camera';
 import { LoginPage } from '../pages/login/login';
 import { OperatorControlPanelPage } from '../pages/operator-control-panel/operator-control-panel';
+import { ParticipantsControlPanelPage } from '../pages/participants-control-panel/participants-control-panel';
+import { ParticipantsHomePage } from '../pages/participants-home/participants-home';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { OperatorControlPanelPage } from '../pages/operator-control-panel/operat
     DetailsPage,
     AddtourparticipantsPage,
     LoginPage,
-    OperatorControlPanelPage
+    OperatorControlPanelPage,
+    ParticipantsControlPanelPage,
+    ParticipantsHomePage
     
   ],
   imports: [
@@ -38,7 +42,9 @@ import { OperatorControlPanelPage } from '../pages/operator-control-panel/operat
     DetailsPage,
     AddtourparticipantsPage,
     LoginPage,
-    OperatorControlPanelPage
+    OperatorControlPanelPage,
+    ParticipantsControlPanelPage,
+    ParticipantsHomePage
   ],
   providers: [
     StatusBar,

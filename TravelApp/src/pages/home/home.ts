@@ -9,7 +9,7 @@ import { DetailsPage } from '../details/details';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+ rate: any=0;
   constructor(public navCtrl: NavController) {
 
   }
@@ -23,4 +23,8 @@ export class HomePage {
   {
     this.navCtrl.push(DetailsPage);
   }
+  onModelChange(event){
+    this.rate = event;
+    console.log(event);
+    }
 }

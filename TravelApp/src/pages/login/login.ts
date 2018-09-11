@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { OperatorControlPanelPage } from '../operator-control-panel/operator-control-panel';
+import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
+import { ParticipantsHomePage } from '../participants-home/participants-home';
 
 
 /**
@@ -25,7 +27,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   home(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(ParticipantsHomePage);
   }
   operator(){
     this.navCtrl.push(OperatorControlPanelPage);

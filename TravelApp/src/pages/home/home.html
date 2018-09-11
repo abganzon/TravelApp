@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -11,11 +11,27 @@
   <ion-card>
 
     <img src="assets/imgs/dakak.png"/>
-
+      
     <ion-card-content>
       <ion-card-title>
         Nine Inch Nails Live
       </ion-card-title>
+
+      
+    <ion-item>
+      <ion-badge>Influenzah</ion-badge>
+
+        <rating [(ngModel)]="rate"
+        readOnly="false"
+        max="5"
+        emptyStarIconName="star-outline"
+        halfStarIconName="star-half"
+        starIconName="star"
+        nullable="false"
+        (ngModelChange)="onModelChange($event)">
+        </rating>
+      </ion-item>
+
       <p>
         The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
       </p>

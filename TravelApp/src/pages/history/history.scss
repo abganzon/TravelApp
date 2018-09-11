@@ -1,4 +1,4 @@
-page-home {
+page-history {
     ul {
         padding: 0px;
         margin-top: 10px;
@@ -10,5 +10,12 @@ page-home {
         font-size: 25px;
         }
         }
+        }
+        .back{
+            text-align: left;
+            width: 75px;
+        }
+        .logout{
+            width: 0px;
         }
 }

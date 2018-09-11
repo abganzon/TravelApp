@@ -19,7 +19,6 @@ export class OperatorControlPanelPage {
   closedRoot = 'ClosedPage'
   addRoot = 'AddPage'
 
-
   constructor(public navCtrl: NavController) {}
 
 }

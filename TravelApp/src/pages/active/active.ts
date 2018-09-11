@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { HomePage } from '../home/home';
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the ActivePage page.
  *
@@ -37,6 +39,7 @@ export class ActivePage {
         {
           text: 'Close',
           handler: () => {
+            this.navCtrl.push(LoginPage);
             console.log('Close clicked');
           }
         }
@@ -54,6 +57,7 @@ export class ActivePage {
           text: 'Exit',
           role: 'cancel',
           handler: () => {
+            this.navCtrl.push(LoginPage);
             console.log('Exit clicked');
           }
         },

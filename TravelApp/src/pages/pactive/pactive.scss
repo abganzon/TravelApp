@@ -1,4 +1,4 @@
-page-home {
+page-pactive {
     ul {
         padding: 0px;
         margin-top: 10px;
@@ -11,4 +11,11 @@ page-home {
         }
         }
         }
+    .back{
+        text-align: left;
+        width: 75px;
+    }
+    .logout{
+        width: 0px;
+    }
 }
