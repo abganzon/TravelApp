@@ -5,6 +5,8 @@ import { DetailsPage } from '../details/details';
 import { App } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { ToastController } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
+import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
 
 /**
  * Generated class for the PactivePage page.
@@ -20,7 +22,7 @@ import { ToastController } from 'ionic-angular';
 })
 export class PactivePage {
  rate: any = 0;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, private toastCtrl: ToastController, private alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -41,18 +43,40 @@ export class PactivePage {
   }
   logout()
   {
-    this.appCtrl.getRootNav().push(LoginPage); 
-    let toast = this.toastCtrl.create({
-      message: 'Successfully Logout',
-      duration: 2000,
-      position: 'middle'
-    });
+    let alert = this.alertCtrl.create({
+      title: 'Confirmation',
+      message: 'Are you sure you want to logout?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Logout',
+          handler: () => {
+            this.navCtrl.push(LoginPage);
+            console.log('Close clicked');
+            
+            let toast = this.toastCtrl.create({
+              message: 'Successfully Logout',
+              duration: 2000,
+              position: 'middle'
+            });
+        
+            toast.onDidDismiss(() => {
+              console.log('Dismissed toast');
+            });
+        
+            toast.present();
 
-    toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+          }
+        }
+      ]
     });
-
-    toast.present();
+    alert.present();
   }
 
   }
