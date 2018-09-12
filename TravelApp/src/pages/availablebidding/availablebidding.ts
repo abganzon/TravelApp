@@ -5,6 +5,7 @@ import { App } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AvailablebiddingdetailsPage } from '../availablebiddingdetails/availablebiddingdetails';
+import { BidnowPage } from '../bidnow/bidnow';
 /**
  * Generated class for the AvailablebiddingPage page.
  *
@@ -73,6 +74,10 @@ rate: any = 0;
     more()
     {
       this.appCtrl.getRootNav().push(AvailablebiddingdetailsPage);
+    }
+    bidnow()
+    {
+      this.appCtrl.getRootNav().push(BidnowPage);
     }
 
 }
