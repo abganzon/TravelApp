@@ -75,10 +75,6 @@ export class ActivePage {
     alert.present();
   }
 
-  back()
-  {
-    this.appCtrl.getRootNav().push(OperatorControlPanelPage);
-  }
   logout()
   {
     let alert = this.alertCtrl.create({

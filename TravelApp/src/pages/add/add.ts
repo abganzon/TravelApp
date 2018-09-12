@@ -26,11 +26,7 @@ export class AddPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddPage');
   }
-  
-  back()
-  {
-    this.appCtrl.getRootNav().push(OperatorControlPanelPage);
-  }
+
   logout()
   {
     let alert = this.alertCtrl.create({

@@ -26,11 +26,6 @@ export class ClosedPage {
     console.log('ionViewDidLoad ClosedPage');
   }
 
-  
-  back()
-  {
-    this.appCtrl.getRootNav().push(OperatorControlPanelPage);
-  }
   logout()
   {
     let alert = this.alertCtrl.create({
