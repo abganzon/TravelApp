@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { LoginPage } from '../login/login';
@@ -20,7 +20,7 @@ import { App } from 'ionic-angular';
 })
 export class ActivePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public appCtrl: App, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, public appCtrl: App, private toastCtrl: ToastController, public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -112,5 +112,4 @@ export class ActivePage {
     });
     alert.present();
   }
-
 }

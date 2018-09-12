@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { BidnowPage } from '../bidnow/bidnow';
 import { App } from 'ionic-angular';
 /**
@@ -16,7 +16,7 @@ import { App } from 'ionic-angular';
 })
 export class AvailablebiddingdetailsPage {
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -26,5 +26,10 @@ export class AvailablebiddingdetailsPage {
   {
     this.appCtrl.getRootNav().push(BidnowPage);
   }
+
+  ionViewDidEnter(){
+    this.menuCtrl.swipeEnable(true, 'OperatorControlPanelPage');
+  }
+
 
 }

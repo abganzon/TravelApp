@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { OperatorControlPanelPage } from '../operator-control-panel/operator-control-panel';
 import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
 import { ParticipantsHomePage } from '../participants-home/participants-home';
-
 
 /**
  * Generated class for the LoginPage page.
@@ -20,7 +19,7 @@ import { ParticipantsHomePage } from '../participants-home/participants-home';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -32,4 +31,8 @@ export class LoginPage {
   operator(){
     this.navCtrl.push(OperatorControlPanelPage);
   }
+  ionViewDidEnter(){
+    this.menuCtrl.swipeEnable(true, 'Homepage');
+  }
+
 }

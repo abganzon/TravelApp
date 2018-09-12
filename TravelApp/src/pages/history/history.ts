@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController} from 'ionic-angular';
 import { ParticipantsHomePage } from '../participants-home/participants-home';
 import { DetailsPage } from '../details/details';
 import { App } from 'ionic-angular';
@@ -22,7 +22,7 @@ import { HomePage } from '../home/home';
 })
 export class HistoryPage {
  rate:any = 0 ;
-  constructor(public navCtrl: NavController, public navParams: NavParams,  public appCtrl: App, private toastCtrl: ToastController, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,  public appCtrl: App, private toastCtrl: ToastController, private alertCtrl: AlertController, public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -77,6 +77,10 @@ export class HistoryPage {
       ]
     });
     alert.present();
+  }
+
+  ionViewDidEnter(){
+    this.menuCtrl.swipeEnable(true, 'ParticipantsHomePage');
   }
 
 }
