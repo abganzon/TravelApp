@@ -44,8 +44,4 @@ export class RegisterUserPage {
     toast.present();
   }
 
-ionViewDidEnter(){
-    this.menuCtrl.swipeEnable(true, 'LoginPage');
-}
-
 }

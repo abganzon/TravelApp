@@ -27,7 +27,5 @@ export class HomePage {
     this.rate = event;
     console.log(event);
     }
-    ionViewWillEnter() {
-      this.viewCtrl.showBackButton(false);
-    }
+   
 }

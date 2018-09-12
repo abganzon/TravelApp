@@ -79,8 +79,4 @@ export class HistoryPage {
     alert.present();
   }
 
-  ionViewDidEnter(){
-    this.menuCtrl.swipeEnable(true, 'ParticipantsHomePage');
-  }
-
 }

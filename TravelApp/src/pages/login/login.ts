@@ -32,9 +32,6 @@ export class LoginPage {
   operator(){
     this.navCtrl.push(OperatorControlPanelPage);
   }
-  ionViewDidEnter(){
-    this.menuCtrl.swipeEnable(true, 'HomePage');
-  }
 
  register()
  {

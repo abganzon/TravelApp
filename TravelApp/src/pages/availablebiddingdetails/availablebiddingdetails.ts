@@ -26,9 +26,5 @@ export class AvailablebiddingdetailsPage {
   {
     this.appCtrl.getRootNav().push(BidnowPage);
   }
-  ionViewDidEnter(){
-    this.menuCtrl.swipeEnable(true, 'OperatorControlPanelPage');
-  }
-
 
 }

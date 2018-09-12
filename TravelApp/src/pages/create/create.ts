@@ -73,7 +73,4 @@ export class CreatePage {
     alert.present();
   }
  
-  ionViewDidEnter(){
-    this.menuCtrl.swipeEnable(true, 'ParticipantsHomePage');
-  }
 }
