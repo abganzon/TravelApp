@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgModule } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ViewController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { DetailsPage } from '../details/details';
 
@@ -10,7 +10,7 @@ import { DetailsPage } from '../details/details';
 })
 export class HomePage {
  rate: any=0;
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController) {
 
   }
 
@@ -26,5 +26,8 @@ export class HomePage {
   onModelChange(event){
     this.rate = event;
     console.log(event);
+    }
+    ionViewWillEnter() {
+      this.viewCtrl.showBackButton(false);
     }
 }
