@@ -43,4 +43,13 @@ export class RegisterUserPage {
 
     toast.present();
   }
+
+  ionViewWillEnter() {
+    this.navCtrl.swipeBackEnabled = false;
+  }
+ 
+ ionViewWillLeave() {
+     this.navCtrl.swipeBackEnabled = true;
+ }
+ 
 }
