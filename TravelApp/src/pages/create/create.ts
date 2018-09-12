@@ -72,7 +72,11 @@ export class CreatePage {
     });
     alert.present();
   }
-  ionViewDidEnter(){
-    this.menuCtrl.swipeEnable(true, 'ParticipantsHomePage');
-  }
+  ionViewWillEnter() {
+    this.navCtrl.swipeBackEnabled = false;
+ }
+ 
+ ionViewWillLeave() {
+     this.navCtrl.swipeBackEnabled = true;
+ }
 }
