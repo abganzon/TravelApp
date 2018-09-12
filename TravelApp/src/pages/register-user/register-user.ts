@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { App } from 'ionic-angular';
 import { ToastController } from 'ionic-angular';
@@ -19,7 +19,7 @@ import { HomePage } from '../home/home';
 })
 export class RegisterUserPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App, private toastCtrl: ToastController, public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -44,12 +44,8 @@ export class RegisterUserPage {
     toast.present();
   }
 
-  ionViewWillEnter() {
-    this.navCtrl.swipeBackEnabled = false;
-  }
- 
- ionViewWillLeave() {
-     this.navCtrl.swipeBackEnabled = true;
- }
- 
+ionViewDidEnter(){
+    this.menuCtrl.swipeEnable(true, 'LoginPage');
+}
+
 }

@@ -21,13 +21,8 @@ export class BidnowPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BidnowPage');
   }
-  
-  ionViewWillEnter() {
-    this.navCtrl.swipeBackEnabled = false;
- }
- 
- ionViewWillLeave() {
-     this.navCtrl.swipeBackEnabled = true;
- }
+  ionViewDidEnter(){
+    this.menuCtrl.swipeEnable(true, 'AvailablebiddingdetailsPage');
+  }
 
 }

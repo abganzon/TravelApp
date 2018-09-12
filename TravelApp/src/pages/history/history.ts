@@ -79,12 +79,8 @@ export class HistoryPage {
     alert.present();
   }
 
-  ionViewWillEnter() {
-    this.navCtrl.swipeBackEnabled = false;
- }
- 
- ionViewWillLeave() {
-     this.navCtrl.swipeBackEnabled = true;
- }
+  ionViewDidEnter(){
+    this.menuCtrl.swipeEnable(true, 'ParticipantsHomePage');
+  }
 
 }
