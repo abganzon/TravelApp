@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the OperatorControlPanelPage tabs.
@@ -19,6 +19,10 @@ export class OperatorControlPanelPage {
   closedRoot = 'ClosedPage'
   addRoot = 'AddPage'
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController) {}
+
+  ionViewWillEnter() {
+    this.viewCtrl.showBackButton(false);
+  }
 
 }
