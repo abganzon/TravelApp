@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Available Bidding
+      </ion-title>
+      
+      <button ion-button clear large float-right (click)="logout()" color="danger" icon-start class="logout">
+          <ion-icon ios="md-log-out"></ion-icon>
+        </button>
+
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="cards-bg">
+  
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>
+          Nine Inch Nails Live
+        </ion-card-title>
+  
+        <p>
+          The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+        </p>
+      </ion-card-content>
+  
+      <ion-row no-padding>
+        <ion-col text-right>
+          <button ion-button clear small color="danger" icon-start (click)="more()">
+            <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+            More
+          </button>
+        </ion-col>
+      </ion-row>
+  
+    </ion-card>
+  
+  </ion-content>
+  

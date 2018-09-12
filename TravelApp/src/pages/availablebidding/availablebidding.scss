@@ -1,0 +1,21 @@
+page-availablebidding {
+    ul {
+        padding: 0px;
+        margin-top: 10px;
+        margin-left: -10px;
+        &.rating li {
+        background: none;
+        color: #ffb400;
+        ion-icon {
+        font-size: 22px;
+        }
+        }
+        }
+        .back{
+            text-align: left;
+            width: 75px;
+        }
+        .logout{
+            width: 0px;
+        }
+}

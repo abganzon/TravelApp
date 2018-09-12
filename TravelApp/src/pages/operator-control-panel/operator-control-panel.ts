@@ -18,7 +18,8 @@ export class OperatorControlPanelPage {
   activeRoot = 'ActivePage'
   closedRoot = 'ClosedPage'
   addRoot = 'AddPage'
-
+  availablebiddingRoot = 'AvailablebiddingPage'
+  
   constructor(public navCtrl: NavController) {}
 
 
