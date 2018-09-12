@@ -20,6 +20,7 @@ import { ParticipantsHomePage } from '../pages/participants-home/participants-ho
 import { AvailablebiddingdetailsPage } from '../pages/availablebiddingdetails/availablebiddingdetails';
 import { ParticipantsHomePageModule } from '../pages/participants-home/participants-home.module';
 import { BidnowPage } from '../pages/bidnow/bidnow';
+import { RegisterUserPage } from '../pages/register-user/register-user';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BidnowPage } from '../pages/bidnow/bidnow';
     ParticipantsControlPanelPage,
     ParticipantsHomePage,
     AvailablebiddingdetailsPage,
-    BidnowPage
+    BidnowPage,
+    RegisterUserPage
     
   ],
   imports: [
@@ -51,7 +53,8 @@ import { BidnowPage } from '../pages/bidnow/bidnow';
     ParticipantsControlPanelPage,
     ParticipantsHomePage,
     AvailablebiddingdetailsPage,
-    BidnowPage
+    BidnowPage,
+    RegisterUserPage
   ],
   providers: [
     StatusBar,

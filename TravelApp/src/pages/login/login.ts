@@ -4,6 +4,7 @@ import { HomePage } from '../home/home';
 import { OperatorControlPanelPage } from '../operator-control-panel/operator-control-panel';
 import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
 import { ParticipantsHomePage } from '../participants-home/participants-home';
+import { RegisterUserPage } from '../register-user/register-user';
 
 /**
  * Generated class for the LoginPage page.
@@ -38,6 +39,10 @@ export class LoginPage {
  
  ionViewWillLeave() {
      this.navCtrl.swipeBackEnabled = true;
+ }
+ register()
+ {
+  this.navCtrl.push(RegisterUserPage);
  }
 
 }
