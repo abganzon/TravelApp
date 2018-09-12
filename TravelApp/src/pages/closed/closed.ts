@@ -5,6 +5,7 @@ import { App } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { OperatorControlPanelPage } from '../operator-control-panel/operator-control-panel';
 import { LoginPage } from '../login/login';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the ClosedPage page.
  *
@@ -42,7 +43,7 @@ export class ClosedPage {
         {
           text: 'Logout',
           handler: () => {
-            this.appCtrl.getRootNav().push(LoginPage);
+            this.appCtrl.getRootNav().push(HomePage);
             console.log('Close clicked');
             
             let toast = this.toastCtrl.create({

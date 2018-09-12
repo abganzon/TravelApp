@@ -91,7 +91,7 @@ export class ActivePage {
         {
           text: 'Logout',
           handler: () => {
-            this.appCtrl.getRootNav().push(LoginPage);
+            this.appCtrl.getRootNav().push(HomePage);
             console.log('Close clicked');
             
             let toast = this.toastCtrl.create({

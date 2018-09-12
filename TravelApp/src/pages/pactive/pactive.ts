@@ -6,6 +6,7 @@ import { App } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the PactivePage page.
  *
@@ -55,7 +56,7 @@ export class PactivePage {
         {
           text: 'Logout',
           handler: () => {
-            this.appCtrl.getRootNav().push(LoginPage);
+            this.appCtrl.getRootNav().push(HomePage);
             console.log('Close clicked');
             
             let toast = this.toastCtrl.create({
