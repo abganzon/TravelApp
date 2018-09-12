@@ -8,6 +8,16 @@
 
   <ion-navbar>
     <ion-title>Closed Tours</ion-title>
+    
+    <button ion-button clear large float-left (click)="back()" color="primary" icon-start class="back">
+      <ion-icon ios="ios-arrow-back"></ion-icon>
+    Back
+    </button>
+
+    <button ion-button clear large float-right (click)="logout()" color="danger" icon-start class="logout">
+      <ion-icon ios="md-log-out"></ion-icon>
+    </button>
+    
   </ion-navbar>
 
 </ion-header>
