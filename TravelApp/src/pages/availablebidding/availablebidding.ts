@@ -72,7 +72,7 @@ rate: any = 0;
   
     more()
     {
-      this.navCtrl.push(AvailablebiddingdetailsPage);
+      this.appCtrl.getRootNav().push(AvailablebiddingdetailsPage);
     }
 
 }

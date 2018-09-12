@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BidnowPage } from '../bidnow/bidnow';
-
+import { App } from 'ionic-angular';
 /**
  * Generated class for the AvailablebiddingdetailsPage page.
  *
@@ -16,7 +16,7 @@ import { BidnowPage } from '../bidnow/bidnow';
 })
 export class AvailablebiddingdetailsPage {
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public appCtrl: App) {
   }
 
   ionViewDidLoad() {
@@ -24,7 +24,7 @@ export class AvailablebiddingdetailsPage {
   }
   bidnow()
   {
-    this.navCtrl.push(BidnowPage);
+    this.appCtrl.getRootNav().push(BidnowPage);
   }
 
 }
