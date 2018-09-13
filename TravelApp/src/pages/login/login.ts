@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
-import { HomePage } from '../home/home';
 import { OperatorControlPanelPage } from '../operator-control-panel/operator-control-panel';
-import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
 import { ParticipantsHomePage } from '../participants-home/participants-home';
 import { RegisterUserPage } from '../register-user/register-user';
 

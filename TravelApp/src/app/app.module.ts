@@ -10,7 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { DetailsPage } from '../pages/details/details';
 import { AddtourparticipantsPage } from '../pages/addtourparticipants/addtourparticipants';
 
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { Camera } from '@ionic-native/camera';
 import { LoginPage } from '../pages/login/login';
@@ -18,9 +18,14 @@ import { OperatorControlPanelPage } from '../pages/operator-control-panel/operat
 import { ParticipantsControlPanelPage } from '../pages/participants-control-panel/participants-control-panel';
 import { ParticipantsHomePage } from '../pages/participants-home/participants-home';
 import { AvailablebiddingdetailsPage } from '../pages/availablebiddingdetails/availablebiddingdetails';
-import { ParticipantsHomePageModule } from '../pages/participants-home/participants-home.module';
 import { BidnowPage } from '../pages/bidnow/bidnow';
 import { RegisterUserPage } from '../pages/register-user/register-user';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from '../providers/auth-guard';
+import { RideService } from '../providers/ride-service';
+import { HttpService } from '../providers/http-service';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -34,13 +39,16 @@ import { RegisterUserPage } from '../pages/register-user/register-user';
     ParticipantsHomePage,
     AvailablebiddingdetailsPage,
     BidnowPage,
-    RegisterUserPage
+    RegisterUserPage,
     
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    Ionic2RatingModule
+    Ionic2RatingModule,
+    HttpModule,
+    HttpClientModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -63,7 +71,11 @@ import { RegisterUserPage } from '../pages/register-user/register-user';
     FileTransfer,
     FileTransferObject,
     File,
-    Camera
+    Camera,
+    AuthGuard,
+    RideService,
+    HttpService,
+    AuthGuard
   ]
 })
 export class AppModule {}

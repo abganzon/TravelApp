@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
 import { DetailsPage } from '../details/details';
-
+import 'rxjs/add/operator/map'
+import { RideService } from '../../providers/ride-service';
+import { HttpService } from '../../providers/http-service';
 /**
  * Generated class for the ParticipantsHomePage page.
  *
@@ -17,16 +19,43 @@ import { DetailsPage } from '../details/details';
 })
 export class ParticipantsHomePage {
   rate: any =0 ;
-  constructor(public navCtrl: NavController, public navParams: NavParams,  private viewCtrl: ViewController) {
+  items: any;
+
+  activeTours: any = [];
+  activeToursCount: any = 0;
+    
+  constructor(
+  public navCtrl: NavController,
+  public navParams: NavParams,  
+  private viewCtrl: ViewController, 	
+  public rideService: RideService,
+  public http: HttpService,) 
+  {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ParticipantsHomePage');
+  
   }
 
   ionViewWillEnter() {
     this.viewCtrl.showBackButton(false);
+
+    console.log('ionViewWillEnter ParticipantsHomePage');
+    
+		this.rideService.getActiveTours()
+		.subscribe(
+			data => {
+				console.log('activeTours: ' + data);
+				this.activeTours = data;
+				this.activeToursCount = Object.keys(data).length;
+				console.log('data present: ' + Object.keys(data).length);
+			}, err => {
+				
+			}
+		);
   }
+
   onModelChange(event){
     this.rate = event;
     console.log(event);

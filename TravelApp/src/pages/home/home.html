@@ -1,58 +1,97 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <ion-title>
+        Home
+      </ion-title>
+    </ion-navbar>
+    
+  </ion-header>
+  
+  <ion-content class="cards-bg">
+  
+  <ion-list>
+    <ion-item *ngFor="let item of activeTours">
+      <ion-card>
+    
+        <img src="assets/imgs/dakak.png"/>
+          
+        <ion-card-content>
 
-<ion-content class="cards-bg">
-
-  <ion-card>
-
-    <img src="assets/imgs/dakak.png"/>
+            <ion-card-title>
+              {{item.title}}
+            </ion-card-title>
       
-    <ion-card-content>
-      <ion-card-title>
-        Nine Inch Nails Live
-      </ion-card-title>
+        <ion-item>
+            <span><ion-badge color="light">Operator</ion-badge><ion-badge>{{item.username}}</ion-badge></span>
+    
+            <rating [(ngModel)]="rate"
+            readOnly="false"
+            max="5"
+            emptyStarIconName="star-outline"
+            halfStarIconName="star-half"
+            starIconName="star"
+            nullable="false"
+            (ngModelChange)="onModelChange($event)">
+            </rating>
+          </ion-item>
+    
+          <p>
+            {{item.desc}}
+          </p>
 
-      
-    <ion-item>
-        <span><ion-badge color="light">Operator</ion-badge><ion-badge>Influenzah</ion-badge></span>
+          <br>
+          <!-- <ion-grid> 
+            <ion-row class="row">
+                <ion-col col-4>
+                        <div class="card-subtitle"><ion-badge color="light">Tour date</ion-badge></div>
+                </ion-col>
+                <ion-col col-6>
+                    <div class="card-subtitle"><button ion-button clear color="primary"><button ion-button small outline color="primary">{{item.tour_date}}  {{item.tour_time}}</button></button></div>
+                </ion-col>
+            </ion-row>
+            <ion-row class="row">
+              <ion-col col-4>
+                    <div class="card-subtitle"><ion-badge color="light">Price</ion-badge></div>
+              </ion-col>
+              <ion-col col-6>
+                    <div class="card-subtitle"><button ion-button clear color="primary"><button ion-button small outline color="primary">₱{{item.tour_price}}</button></button></div>
+              </ion-col>
+            </ion-row>
+            <ion-row class="row">
+                <ion-col col-4>
+                      <div class="card-subtitle"><ion-badge color="light">Meet place</ion-badge></div>
+                </ion-col>
+                <ion-col col-6>
+                      <div class="card-subtitle"><button ion-button clear color="primary"></button></div>
+                </ion-col>
+              </ion-row><br>
+              <ion-row>
+                <button ion-button small outline color="dark">{{item.meetup_place}}</button>
+              </ion-row>
+          </ion-grid>-->
 
-        <rating [(ngModel)]="rate"
-        readOnly="false"
-        max="5"
-        emptyStarIconName="star-outline"
-        halfStarIconName="star-half"
-        starIconName="star"
-        nullable="false"
-        (ngModelChange)="onModelChange($event)">
-        </rating>
-      </ion-item>
+        
+        </ion-card-content>
+    
+        <ion-row no-padding>
+          <ion-col>
+            <button ion-button clear small color="danger" icon-start (click)="loginpage()">
+              <ion-icon ios="ios-book" md="md-book"></ion-icon>
+              Book now
+            </button>
+          </ion-col>
+          
+          <ion-col text-right>
+            <button ion-button clear small color="danger" icon-start (click)="details()">
+              <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+              Read More
+            </button>
+          </ion-col>
+        </ion-row>
+    
+      </ion-card>
+    </ion-item>
+  </ion-list>
 
-      <p>
-        The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
-      </p>
-    </ion-card-content>
-
-    <ion-row no-padding>
-      <ion-col>
-        <button ion-button clear small color="danger" icon-start (click)="loginpage()">
-          <ion-icon ios="ios-book" md="md-book"></ion-icon>
-          Book now
-        </button>
-      </ion-col>
-      
-      <ion-col text-right>
-        <button ion-button clear small color="danger" icon-start (click)="details()">
-          <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
-          Read More
-        </button>
-      </ion-col>
-    </ion-row>
-
-  </ion-card>
-
-</ion-content>
+  </ion-content>
+  
