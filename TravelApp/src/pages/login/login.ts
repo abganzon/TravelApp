@@ -55,8 +55,6 @@ export class LoginPage {
       if (res.json() != 'not passed'&& res.json() != 'not found'){
         console.log(res.json().is_operator);
         if(res.json().is_operator == 0){
-            
-        
         this.navCtrl.setRoot(ParticipantsHomePage);
         let toast = this.toastCtrl.create({
           message: 'Logged In',
