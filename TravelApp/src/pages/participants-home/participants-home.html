@@ -27,7 +27,7 @@
         <ion-item>
             <span><ion-badge color="light">Operator</ion-badge><ion-badge>{{item.username}}</ion-badge></span>
     
-            <rating [(ngModel)]="rate"
+            <!--<rating [(ngModel)]="rate"
             readOnly="false"
             max="5"
             emptyStarIconName="star-outline"
@@ -35,7 +35,8 @@
             starIconName="star"
             nullable="false"
             (ngModelChange)="onModelChange($event)">
-            </rating>
+            </rating>-->
+            
           </ion-item>
     
           <p>
@@ -86,7 +87,7 @@
           </ion-col>
           
           <ion-col text-right>
-            <button ion-button clear small color="danger" icon-start (click)="details()">
+            <button ion-button clear small color="danger" icon-start (click)="details(item.id)">
               <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
               Read More
             </button>

@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController, AlertController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 import { OperatorControlPanelPage } from '../operator-control-panel/operator-control-panel';
+import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
 import { ParticipantsHomePage } from '../participants-home/participants-home';
 import { RegisterUserPage } from '../register-user/register-user';
 
+  import { Http } from '@angular/http';
+  import 'rxjs/add/operator/map';
+
+  import { ToastController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
+import { ResolvedStaticSymbol } from '@angular/compiler';
 /**
  * Generated class for the LoginPage page.
  *
@@ -18,9 +26,68 @@ import { RegisterUserPage } from '../register-user/register-user';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
+  data:any = {};
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController,
+    public loadingCtrl: LoadingController, private alertCtrl: AlertController,  private toastCtrl: ToastController,
+    public http: Http) {
+
+      
   }
 
+  apiRoot: string = "http://rides.iothings.asia/public/api/check_user";
+
+  alert(message: string) {
+    this.alertCtrl.create({
+      title: 'Unable to login',
+      subTitle: message,
+      buttons: ['OK']
+    }).present();
+  }
+  
+  postUser (){
+    console.log("POST");
+    let url = this.apiRoot;
+    let username = this.data.username;
+    let password = this.data.password;
+    this.http.post(url ,{username:username, password:password}).subscribe(res =>{ 
+      console.log(res.statusText);
+      if (res.json() != 'not passed'&& res.json() != 'not found'){
+        console.log(res.json().is_operator);
+        if(res.json().is_operator == 0){
+            
+        
+        this.navCtrl.setRoot(ParticipantsHomePage);
+        let toast = this.toastCtrl.create({
+          message: 'Logged In',
+          duration: 2000,
+          position: 'middle'
+      });
+      toast.onDidDismiss(() => {
+        console.log('Dismissed toast');
+      });
+  
+      toast.present();
+      }
+      else{
+        this.navCtrl.setRoot(OperatorControlPanelPage);
+        let toast = this.toastCtrl.create({
+          message: 'Logged In',
+          duration: 2000,
+          position: 'middle'
+      });
+      toast.onDidDismiss(() => {
+        console.log('Dismissed toast');
+      });
+  
+      toast.present();
+      }
+      }else{
+        this.alert("Kindly check username or password");
+      }
+      console.log(res.json())});
+    
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
@@ -35,5 +102,8 @@ export class LoginPage {
  {
   this.navCtrl.push(RegisterUserPage);
  }
+
+
+
 
 }

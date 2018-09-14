@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, ViewController } from 'ionic-angular';
 import { DetailsPage } from '../details/details';
 import 'rxjs/add/operator/map'
 import { RideService } from '../../providers/ride-service';
@@ -17,8 +17,7 @@ export class HomePage {
   activeToursCount: any = 0;
     
   constructor(
-  public navCtrl: NavController,
-  public navParams: NavParams,  
+  public navCtrl: NavController,  
   private viewCtrl: ViewController, 	
   public rideService: RideService,
   public http: HttpService,) 
@@ -53,9 +52,10 @@ export class HomePage {
     this.navCtrl.push(LoginPage);
   }
 
-  details()
-  {
-    this.navCtrl.push(DetailsPage);
+  details(id) { 
+    this.navCtrl.push(DetailsPage,{
+      id: id
+    });
   }
 
   onModelChange(event){

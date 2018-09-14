@@ -26,6 +26,8 @@ import { AuthGuard } from '../providers/auth-guard';
 import { RideService } from '../providers/ride-service';
 import { HttpService } from '../providers/http-service';
 import { IonicStorageModule } from '@ionic/storage';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { IonicStorageModule } from '@ionic/storage';
     ParticipantsHomePage,
     AvailablebiddingdetailsPage,
     BidnowPage,
-    RegisterUserPage,
+    RegisterUserPage
     
   ],
   imports: [
@@ -48,7 +50,9 @@ import { IonicStorageModule } from '@ionic/storage';
     Ionic2RatingModule,
     HttpModule,
     HttpClientModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -76,6 +80,7 @@ import { IonicStorageModule } from '@ionic/storage';
     RideService,
     HttpService,
     AuthGuard
+    
   ]
 })
 export class AppModule {}

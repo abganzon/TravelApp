@@ -64,8 +64,9 @@ export class ParticipantsHomePage {
   {
     this.navCtrl.push(ParticipantsControlPanelPage);
   }
-  details()
-  {
-    this.navCtrl.push(DetailsPage);
+  details(id) { 
+    this.navCtrl.push(DetailsPage,{
+      id: id
+    });
   }
 }

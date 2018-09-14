@@ -6,8 +6,8 @@
 
 
 export let env = 'dev';
-export let active_tours= 'http://rides.iothings.asia/public/api';
-
+export let active_tours = 'http://rides.iothings.asia/public/api';
+export let active_tour_details = 'http://rides.iothings.asia/public/api/activetourdetail';
 export let Facebook = {
 	app_id: 811915815624155,
 	perms : ['email', 'public_profile'],

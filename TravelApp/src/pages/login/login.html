@@ -18,31 +18,28 @@
 
     <ion-item>
       <ion-label floating>Username</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" name="username" [(ngModel)]="data.username" required></ion-input>
     </ion-item>
   
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" name="password" [(ngModel)]="data.password" required></ion-input>
     </ion-item>
   
   </ion-list>
 
   <div padding>
-    <button ion-button color="primary" block (click)="home()">Sign In as Participant</button>
+      <button ion-button color="primary" block (click)="postUser()">Sign In</button>
   </div>
-  <div padding>
-      <button ion-button color="primary" block (click)="operator()">Sign In as Operator</button>
-    </div>
   
   <div padding>
       <button ion-button color="primary" block icon-start>
           <span><ion-icon name="logo-facebook"></ion-icon></span>
           Sign In With Facebook</button>
-    </div>
+  </div>
 
     <div padding>
-        <button ion-button clear color="primary" block (click)="register()">Not yet Register?</button>
+        <button ion-button clear color="primary" block (click)="register()">Not yet Registered?</button>
     </div>
 
 </ion-content>

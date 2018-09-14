@@ -15,26 +15,30 @@
 
 <ion-content padding>
       <ion-item>
-          <ion-input type="text" placeholder="Full Name"></ion-input>
+          <ion-input type="text" placeholder="Full Name" name="fullname" [(ngModel)]="data.fullname" required></ion-input>
       </ion-item>
       <br>
       <ion-item>
-          <ion-input  type="text" placeholder="Username"></ion-input>
+          <ion-input  type="text" placeholder="Username" name= "usernamex" [(ngModel)]="data.usernamex" required></ion-input>
       </ion-item>
       <br>
       <ion-item>
-          <ion-input type="password" placeholder="Password"></ion-input>
+          <ion-input type="password" placeholder="Password" name="passwordx" [(ngModel)]="data.passwordx" required></ion-input>
       </ion-item>
       <br>
       <ion-item>
-         <ion-input type="email" placeholder="Email"></ion-input>
+         <ion-input type="email" placeholder="Email" name="emailx" [(ngModel)]="data.emailx" required></ion-input>
       </ion-item>
       <br>
       <ion-item>
-        <ion-input type="text" placeholder="Phone Number"></ion-input>
+        <ion-input type="text" placeholder="Phone Number" name="pnumber" [(ngModel)]="data.pnumber" required></ion-input>
      </ion-item>
 
       <div padding>
-          <button ion-button color="primary" block (click)="register()">Register</button>
+          <button ion-button color="primary" block (click)="postOperator()">Register as Operator</button>
+      </div>
+
+      <div padding>
+          <button ion-button color="primary" block (click)="postParticipant()">Register as Participant</button>
       </div>
 </ion-content>
