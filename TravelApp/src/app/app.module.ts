@@ -30,6 +30,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ImagesProvider } from '../providers/images/images';
 import { GlobalProvider } from '../providers/global/global';
+import { Facebook } from '@ionic-native/facebook';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { GlobalProvider } from '../providers/global/global';
     HttpService,
     AuthGuard,
     ImagesProvider,
-    GlobalProvider
+    GlobalProvider,
+    Facebook
     
   ]
 })

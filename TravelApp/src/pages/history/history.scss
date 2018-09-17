@@ -1,15 +1,21 @@
 page-history {
     ul {
-        padding: 0px;
-        margin-top: 10px;
+        padding: 0px 3px;
+        margin-top: 13px;
         margin-left: -10px;
         &.rating li {
         background: none;
         color: #ffb400;
         ion-icon {
-        font-size: 22px;
+        font-size: 17px;
         }
         }
+        }
+    ul.rating[_ngcontent-c0] li[_ngcontent-c0] {
+            display: inline;
+            border: 0px;
+            background: none;
+            padding: 0px 3px;
         }
         .back{
             text-align: left;
