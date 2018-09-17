@@ -142,7 +142,7 @@ export class AddPage {
 				data => {
 				}, err => console.log('error in post')
 		);
-		this.navCtrl.pop();
+		//this.navCtrl.pop();
 		//this.navCtrl.setRoot(OperatorControlPanelPage);
 	}
 
