@@ -5,10 +5,12 @@ import 'rxjs/add/operator/map'
 import { RideService } from '../../providers/ride-service';
 import { HttpService } from '../../providers/http-service';
 import { LoginPage } from '../login/login';
+import { App, MenuController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+ 
 })
 export class HomePage {
   rate: any =0 ;
@@ -20,9 +22,10 @@ export class HomePage {
   public navCtrl: NavController,  
   private viewCtrl: ViewController, 	
   public rideService: RideService,
-  public http: HttpService,) 
+  public http: HttpService,
+  public menu: MenuController) 
   {
-
+    
   }
 
   ionViewDidLoad() {

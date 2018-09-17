@@ -17,43 +17,64 @@
 
 </ion-header>
 
-
 <ion-content padding>
-    <ion-item>
-        <ion-input type="text" placeholder="Name of Tour"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item >
-        <ion-label text-center>
-        <ion-img src="assets/img/794751-200.png" height="50px" width="50px" ></ion-img>
-        Add Images</ion-label>
-    </ion-item>
-    <br>
-    <ion-item>
-        <ion-label color="primary">₱</ion-label>
-        <ion-input  type="number" placeholder="Price"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-        <ion-label>Date and Time</ion-label>
-        <ion-datetime displayFormat="MMM DD, YYYY hh:mm A" [(ngModel)]="myDate"></ion-datetime>
-    </ion-item>
-    <br>
-    <ion-item>
-        <ion-input type="number" placeholder="Number of Participants"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-            <ion-textarea type="text" placeholder="Street/Brgy/City/Province/Municipality" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></ion-textarea>
-        </ion-item>
-    <br>
-    <ion-item>
-        <ion-textarea type="text" placeholder="Description of Tour" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></ion-textarea>
-    </ion-item>
+	<div><!--*ngIf="this.loggedinuser else notLoggedin"-->
+		<form #f="ngForm" (ngSubmit)="saveTour(f)" novalidate>
+			<ion-list>
+				<ion-item>
+					<ion-label floating>Tour Title</ion-label>
+					<ion-textarea type="text" id="title" name="title" [(ngModel)]="title" rows="2"></ion-textarea>
+				</ion-item>
+				<ion-item>
+					<ion-label floating>Tour Description</ion-label>
+					<ion-textarea type="text" id="description" name="description" [(ngModel)]="description" rows="4"></ion-textarea>
+				</ion-item>
 
-    <div padding>
-        <button ion-button color="primary" block>Add Tour</button>
-    </div>
+				<ion-item>
+					<ion-label floating>Tour Date</ion-label>
+					<ion-datetime name="tour_date" displayFormat="MMM DD YYYY" [(ngModel)]="tour_date"></ion-datetime>
+				</ion-item>
 
+				<ion-item>
+					<ion-label floating>Destination</ion-label>
+					<ion-input name="destination" [(ngModel)]="destination"></ion-input>
+				</ion-item>
+				<br/>
+				<ion-item>
+					<ion-input type="hidden" hidden="hidden" name="user_id" [(ngModel)]="user_id" hidden></ion-input>
+					<ion-input type="text" hidden="hidden" name="tour_image" [(ngModel)]="tour_image"></ion-input>
+				</ion-item>
+				<ion-item>
+			   <div *ngIf="!isSelected" style="height: 50px;">
+				   <br/>
+				  <input
+					type="file"
+					id="file"
+					(change)="selectFileToUpload($event)"/>
+			   </div>
+
+			   <div *ngIf="isSelected">
+				   	<div>
+						<br/><br/>
+						<img [src]="smallImg">
+					</div>
+					<br/>
+					<button
+						ion-button
+						color="primary"
+						(click)="uploadFile()">Save
+					</button>
+
+				</div>
+				</ion-item>
+				<!-- <button ion-button type="submit">Save</button> -->
+			</ion-list>
+		</form>
+		</div>
+
+	<!--<ng-template #notLoggedin>
+		<span>please login: user not logged in</span>
+    </ng-template>-->
+    
 </ion-content>
 

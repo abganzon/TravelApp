@@ -22,15 +22,15 @@
               <ion-item>
                   <span><ion-badge color="light">Operator</ion-badge><ion-badge>{{item.username}}</ion-badge></span>
           
-                  <!--<rating [(ngModel)]="rate"
-                  readOnly="false"
+                  <rating [(ngModel)]="rate"
+                  readOnly="true"
                   max="5"
                   emptyStarIconName="star-outline"
                   halfStarIconName="star-half"
                   starIconName="star"
                   nullable="false"
                   (ngModelChange)="onModelChange($event)">
-                  </rating>-->
+                  </rating>
 
                 </ion-item>
           
@@ -39,6 +39,7 @@
                 </p>
       
                 <br>
+                
                 <ion-grid> 
                   <ion-row class="row">
                       <ion-col col-4>
@@ -68,13 +69,16 @@
                       <button ion-button small outline color="dark">{{item.meetup_place}}</button>
                     </ion-row>
                 </ion-grid>
+                
           </ion-card-content>
         </ion-card>
       
 
   <ion-card-content>
   <ion-list>
-  <ion-badge float-right>/ {{item.part_count}}</ion-badge>
+  <ion-badge float-right>{{item.part_count}}</ion-badge>
+  <ion-badge float-right color="light"> of </ion-badge>
+  <ion-badge float-right>1</ion-badge>
   <ion-card-title>
   Participants
   </ion-card-title>
