@@ -20,7 +20,7 @@ page-details {
         margin-top: 15px;
         margin-left: -40px;
     }
-    .row{
+    .row_row{
         margin-top: -27px;
     }
     ul {
@@ -104,5 +104,11 @@ page-details {
         .roww:last-child .coll {
             //border-bottom: solid 1px grey;
         }
-        
+        .align{
+            margin-left: -18px;
+            margin-right: -20px;
+        }
+        .part-font-size{
+            font-size: 17px;
+        }
     }

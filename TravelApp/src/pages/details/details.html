@@ -54,7 +54,7 @@
                     {{item.desc}}
                   </p>
                 </div>
-                
+
                 <div class="roww header">
                     <div class="coll">Tour Date</div>
                   </div>
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="roww header">
-                    <div class="coll">Meetup Place</div>
+                  <div class="coll">Meetup Place</div>
                   </div>
                   <div class="roww" ng-repeat="data in ctrl.data">
                     <div class="coll">{{item.meetup_place}}</div>
@@ -75,12 +75,26 @@
 
   <ion-card-content>
   <ion-list>
-  <ion-badge float-right>{{item.part_count}}</ion-badge>
-  <ion-badge float-right color="light"> of </ion-badge>
-  <ion-badge float-right>1</ion-badge>
-  <ion-card-title>
-  Participants
-  </ion-card-title>
+
+    <ion-grid>
+      <ion-row class="part-font-size">
+      <ion-col>
+        <ion-card-title>
+        Participants
+        </ion-card-title>
+      </ion-col>
+        <ion-col col-1>
+          1
+        </ion-col>
+        <ion-col col-1 class="align">
+          /
+        </ion-col>
+        <ion-col col-1>
+          {{item.part_count}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
   <ion-item>
   <ion-avatar item-start>
   <img src="assets/imgs/iz.jpg">
