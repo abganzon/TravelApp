@@ -22,55 +22,68 @@
 </ion-header>
 
 
-<ion-content padding>
-    
-    <ion-card>
-
-        <img src="assets/imgs/dakak.png"/>
-          
-        <ion-card-content>
-          <ion-card-title>
-            Nine Inch Nails Live
-          </ion-card-title>
-    
-          <ion-row no-padding>
-              <ion-col>
-                   <span><ion-badge color="light">Created by</ion-badge><ion-badge>Operator name</ion-badge></span>
-                </ion-col>
+<ion-content class="cards-bg">
+    <ion-list>
+      <ion-item>
+        <ion-card>
+            <ion-item>
+                <ion-row>
+                    <ion-col>
+                      <h2>Operator</h2>
+                      <p>Created by</p>
+                    </ion-col>
+                    <ion-col>
+                        <rating [(ngModel)]="rate" float-right
+                        readOnly="true"
+                        max="5"
+                        emptyStarIconName="star-outline"
+                        halfStarIconName="star-half"
+                        starIconName="star"
+                        nullable="false"
+                        (ngModelChange)="onModelChange($event)">
+                        </rating>
+                      </ion-col>
+                </ion-row>
+            </ion-item>
+  
+          <img src="assets/imgs/dakak.png"/>
+            
+          <ion-card-content>
+  
+              <ion-card-title>
+                <ion-row>
+                  <ion-col>
+                     Dakak Beach
+                    </ion-col>
+                    <ion-col>
+                      <button ion-button clear large float-right class="price">₱5000</button>
+                      </ion-col>
+                  </ion-row>
+              </ion-card-title>
+            <div class="item-body">
+              <p>
+                  Ionic Native: tried calling SplashScreen.hide, but Cordova is not available. Make sure to a) run in a real device or simulator and b) include cordova.js in your index.html
+              </p>
+            </div>
+            <ion-row no-padding>
                 <ion-col>
-                      <rating [(ngModel)]="rate" float-right
-                      readOnly="true"
-                      max="5"
-                      emptyStarIconName="star-outline"
-                      halfStarIconName="star-half"
-                      starIconName="star"
-                      nullable="false"
-                      (ngModelChange)="onModelChange($event)">
-                      </rating>
-                  </ion-col>
-          </ion-row>
-    
-          <p>
-            The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
-          </p>
-        </ion-card-content>
-    
-        <ion-row no-padding>
-          <ion-col>
-            <button ion-button clear small color="danger" icon-start>
-              <ion-icon ios="md-checkmark-circle-outline"></ion-icon>
-              Recent Tour
-            </button>
-          </ion-col>
-          
-          <ion-col text-right>
-            <button ion-button clear small color="danger" icon-start (click)="details()">
-              <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
-              Read More
-            </button>
-          </ion-col>
-        </ion-row>
-    
-      </ion-card>
-
-</ion-content>
+                  <button ion-button clear small class="booknow" icon-start>
+                    <ion-icon ios="ios-clock"></ion-icon>
+                    Recent Tour
+                  </button>
+                </ion-col>
+                
+                <ion-col text-right>
+                  <button ion-button small class="readmore" icon-start>
+                    <ion-icon ios="" md=""></ion-icon>
+                    Read More
+                  </button>
+                </ion-col>
+              </ion-row>
+          </ion-card-content>
+      
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  
+    </ion-content>

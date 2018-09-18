@@ -34,7 +34,6 @@ export class HomePage {
 
   ionViewWillEnter() {
     this.viewCtrl.showBackButton(false);
-
     console.log('ionViewWillEnter HomePage');
     
 		this.rideService.getActiveTours()

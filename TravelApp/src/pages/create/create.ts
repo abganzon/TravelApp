@@ -7,6 +7,7 @@ import { LoginPage } from '../login/login';
 import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { ParticipantsControlPanelPage } from '../participants-control-panel/participants-control-panel';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the CreatePage page.
  *
@@ -51,7 +52,7 @@ export class CreatePage {
         {
           text: 'Logout',
           handler: () => {
-            this.appCtrl.getRootNav().push(LoginPage);
+            this.appCtrl.getRootNav().push(HomePage);
             console.log('Close clicked');
             
             let toast = this.toastCtrl.create({

@@ -7,7 +7,7 @@ page-history {
         background: none;
         color: #ffb400;
         ion-icon {
-        font-size: 17px;
+        font-size: 20px;
         }
         }
         }
@@ -15,7 +15,45 @@ page-history {
             display: inline;
             border: 0px;
             background: none;
-            padding: 0px 3px;
+            padding: 0px 5px;
+        }
+        .label-ios {
+            margin: 0px 8px 0px 0;
+        }
+        .list-ios .item-block .item-inner {
+            border-bottom: 0.55px solid #fff;
+        }
+        .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+            border-bottom: 0.55px solid #fff;
+        }
+        
+        .meetplace{
+            margin-top: 15px;
+            margin-left: -40px;
+        }
+        .row{
+            margin-top: 0px;
+        }
+          h2{
+              color: #454d2b;
+        }
+        .item-body{
+            line-height: 1.5em;
+            height: 3em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            width: 100%;
+        }
+        .readmore{
+            background-color: #a6d121;
+            color: #000;
+        }
+        .booknow{
+            color: #454d2b;
+        }
+        .price{
+            color: #a6d121;
         }
         .back{
             text-align: left;
