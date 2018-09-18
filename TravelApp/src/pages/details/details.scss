@@ -82,5 +82,27 @@ page-details {
         .color{
             color: #454d2b;
         }
+        .header .coll {
+            background-color: #454d2b;
+            color: #fff;
+            padding: 5px;
+            font-size: 12px;
+        }
+        
+        .coll {
+            //border: solid 1px grey;
+            border-bottom-style: none;
+            border-right-style: none;
+            padding: 5px;
+            font-size: 11px;
+        }
+        
+        .coll:last-child {
+           // border-right: solid 1px grey;
+        }
+        
+        .roww:last-child .coll {
+            //border-bottom: solid 1px grey;
+        }
         
     }
