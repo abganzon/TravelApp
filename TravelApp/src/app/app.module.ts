@@ -31,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ImagesProvider } from '../providers/images/images';
 import { GlobalProvider } from '../providers/global/global';
 import { Facebook } from '@ionic-native/facebook';
+import { SuccessfulbookingPage } from '../pages/successfulbooking/successfulbooking';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { Facebook } from '@ionic-native/facebook';
     ParticipantsHomePage,
     AvailablebiddingdetailsPage,
     BidnowPage,
-    RegisterUserPage
+    RegisterUserPage,
+    SuccessfulbookingPage
     
   ],
   imports: [
@@ -69,7 +71,8 @@ import { Facebook } from '@ionic-native/facebook';
     ParticipantsHomePage,
     AvailablebiddingdetailsPage,
     BidnowPage,
-    RegisterUserPage
+    RegisterUserPage,
+    SuccessfulbookingPage
   ],
   providers: [
     StatusBar,

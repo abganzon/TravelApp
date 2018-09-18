@@ -8,20 +8,46 @@
   </ion-header>
   
   <ion-content class="cards-bg">
-  
   <ion-list>
     <ion-item *ngFor="let item of activeTours">
       <ion-card>
-    
+          <ion-item>
+              <ion-row>
+                  <ion-col>
+                    <h2>{{item.username}}</h2>
+                    <p>Created by</p>
+                  </ion-col>
+                  <ion-col>
+                      <rating [(ngModel)]="rate" float-right
+                      readOnly="true"
+                      max="5"
+                      emptyStarIconName="star-outline"
+                      halfStarIconName="star-half"
+                      starIconName="star"
+                      nullable="false"
+                      (ngModelChange)="onModelChange($event)">
+                      </rating>
+                    </ion-col>
+              </ion-row>
+          </ion-item>
+
         <img src="assets/imgs/dakak.png"/>
           
         <ion-card-content>
 
             <ion-card-title>
-              {{item.title}}
+              <ion-row>
+                <ion-col>
+                   {{item.title}}
+                  </ion-col>
+                  <ion-col>
+                    <button ion-button clear large float-right class="price">₱{{item.tour_price}}</button>
+                    </ion-col>
+                </ion-row>
             </ion-card-title>
-          <ion-row no-padding>
-              <ion-col>
+          
+          <!--  <ion-row no-padding>
+                <ion-col>
                    <span><ion-badge color="light">Created by</ion-badge><ion-badge>{{item.username}}</ion-badge></span>
                 </ion-col>
                 <ion-col>
@@ -35,31 +61,29 @@
                       (ngModelChange)="onModelChange($event)">
                       </rating>
                   </ion-col>
-          </ion-row>
-            
-          <p>
-            {{item.desc}}
-          </p>
-
-          <br>
-          
+          </ion-row>-->
+         
+          <div class="item-body">
+            <p>
+              {{item.desc}}
+            </p>
+          </div>
+          <ion-row no-padding>
+              <ion-col>
+                <button ion-button small class="booknow" icon-start (click)="loginpage()">
+                  <ion-icon ios="ios-book" md="md-book"></ion-icon>
+                  Book now
+                </button>
+              </ion-col>
+              
+              <ion-col text-right>
+                <button ion-button small class="readmore" icon-start (click)="details(item.id)">
+                  <ion-icon ios="" md=""></ion-icon>
+                  Read More
+                </button>
+              </ion-col>
+            </ion-row>
         </ion-card-content>
-    
-        <ion-row no-padding>
-          <ion-col>
-            <button ion-button clear small color="danger" icon-start (click)="loginpage()">
-              <ion-icon ios="ios-book" md="md-book"></ion-icon>
-              Book now
-            </button>
-          </ion-col>
-          
-          <ion-col text-right>
-            <button ion-button clear small color="danger" icon-start (click)="details(item.id)">
-              <ion-icon ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
-              Read More
-            </button>
-          </ion-col>
-        </ion-row>
     
       </ion-card>
     </ion-item>

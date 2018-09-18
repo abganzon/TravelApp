@@ -4,6 +4,7 @@ import { RideService } from '../../providers/ride-service';
 import * as ApiConf from '../../config/api';
 import 'rxjs/add/operator/map';
 import { HttpService } from '../../providers/http-service';
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the DetailsPage page.
  *
@@ -54,6 +55,10 @@ export class DetailsPage {
 				
 			}
     );
+  }
+  booknow()
+  {
+    this.navCtrl.push(LoginPage);
   }
 
 }

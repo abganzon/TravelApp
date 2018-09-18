@@ -13,6 +13,7 @@ import { RegisterUserPage } from '../register-user/register-user';
 import { LoadingController } from 'ionic-angular';
 import { ResolvedStaticSymbol } from '@angular/compiler';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
+import { SuccessfulbookingPage } from '../successfulbooking/successfulbooking';
 /**
  * Generated class for the LoginPage page.
  *
